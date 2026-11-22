@@ -115,3 +115,7 @@ VLA は上位の行動計画を受け持ち、12 関節の歩行制御は RL ポ
 - [Stanford Pupper GitHub](https://github.com/stanfordroboticsclub/StanfordQuadruped)
 
 Pupper v3 の公開設計を利用・改変する際は、該当するリポジトリ・CAD・ファームウェアのライセンスを個別に確認します。
+
+## ライセンス
+
+本リポジトリは [MIT License](LICENSE) で公開しています。Pupper v3 など外部プロジェクト由来の設計・コードを取り込む場合は、元のライセンスに従います。
