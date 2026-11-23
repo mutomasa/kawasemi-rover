@@ -9,12 +9,13 @@ Kawasemi Rover（仮称）は、3D プリンタで製作する 12 自由度の�
 > [!NOTE]
 > 本プロジェクトは計画・初期設計の段階です。仕様は機構計算と実験結果に応じて変わります。
 
-詳しい開発計画は [design.md](design.md) を参照してください。
+詳しい開発計画は [design.md](design.md)、分野ごとのドキュメントは [docs/](docs/) を参照してください。
 
 ---
 
 ## 目指すもの
 
+- 屋外の地形に合わせて、脚長や胴体寸法をシミュレーションで最適化する形状設計
 - Autodesk Fusion で独自設計し、3D プリンタで製作する屋外対応の四足ロボット
 - ROS 2 による制御とセンサ統合
 - LiDAR・RGB-D カメラによる環境認識、SLAM と Nav2 による自律移動
@@ -84,7 +85,7 @@ VLA は上位の行動計画を受け持ち、12 関節の歩行制御は RL ポ
 
 | Phase | 内容 | 成果物 |
 |---|---|---|
-| 1 | 1 脚の試作（設計・IK・トルク推定・実機制御） | 3 自由度のオリジナル脚部 |
+| 1 | 1 脚の試作（地形別の寸法評価・設計・IK・トルク推定・実機制御） | 3 自由度のオリジナル脚部 |
 | 2 | 四足ロボットの製作（胴体・4 脚・IMU・ROS 2） | 12 自由度四足ロボット |
 | 3 | URDF・MuJoCo モデル、PPO による歩行学習、Sim2Real | RL で歩けるロボット |
 | 4 | 足裏・筐体の改良、芝生・砂利・段差・斜面の検証 | 屋外対応の四足ロボット |
@@ -94,6 +95,7 @@ VLA は上位の行動計画を受け持ち、12 関節の歩行制御は RL ポ
 ## 最初のタスク
 
 - [ ] Pupper v3 の公開資料とライセンスを確認する
+- [ ] 寸法をパラメータ化したモデルで、地形ごとの性能を MuJoCo で評価する
 - [ ] 全体寸法・目標重量・積載量・走行時間を決める
 - [ ] 1 脚 3 自由度の機構を Fusion で設計する
 - [ ] MATLAB で脚の順・逆運動学を実装する
@@ -109,10 +111,13 @@ VLA は上位の行動計画を受け持ち、12 関節の歩行制御は RL ポ
 
 不整地での歩行失敗の検知、世界モデルによる失敗予測、失敗後の歩容・速度・経路の修正、未知の屋外環境への汎化を研究課題とします。
 
+また、[RoboGrammar](https://people.csail.mit.edu/jiex/papers/robogrammar/) を参考に、対象とする屋外地形に合わせて脚長や胴体寸法を最適化する形状設計にも取り組みます。
+
 ## 参考
 
 - [Stanford Pupper v3 Documentation](https://pupper-v3-documentation.readthedocs.io/en/latest/)
 - [Stanford Pupper GitHub](https://github.com/stanfordroboticsclub/StanfordQuadruped)
+- [RoboGrammar: Graph Grammar for Terrain-Optimized Robot Design](https://people.csail.mit.edu/jiex/papers/robogrammar/)（SIGGRAPH Asia 2020）
 
 Pupper v3 の公開設計を利用・改変する際は、該当するリポジトリ・CAD・ファームウェアのライセンスを個別に確認します。
 
