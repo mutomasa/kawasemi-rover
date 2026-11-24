@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Kawasemi Rover ポスター</title>
+<style>
+  @page { size: 841mm 1189mm; margin: 0; }
+  :root {
+    --ink: #1d2430;
+    --muted: #5a6474;
+    --navy: #0b3f73;
+    --blue: #0e7fc0;
+    --blue-bg: #e4f2fa;
+    --orange: #c4601a;
+    --orange-bg: #fdeedf;
+    --gray-bg: #f2f3f5;
+    --line: #c9cfd8;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #ffffff; }
+  body {
+    width: 841mm; height: 1189mm; overflow: hidden;
+    font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+    color: var(--ink); font-size: 27pt; line-height: 1.55;
+    font-feature-settings: "palt";
+  }
+  .page { padding: 0 26mm 16mm; height: 100%; display: flex; flex-direction: column; }
+
+  header {
+    margin: 0 -26mm; padding: 20mm 26mm 14mm;
+    background: linear-gradient(100deg, #0b3f73 0%, #0e6fae 70%, #0e7fc0 100%); color: #fff;
+    border-bottom: 4mm solid #ef8a35;
+  }
+  header .en { font-size: 58pt; font-weight: 700; line-height: 1.18; letter-spacing: -0.5pt; }
+  header .ja { font-size: 44pt; font-weight: 500; margin-top: 6mm; opacity: .95; }
+  header .who { margin-top: 9mm; font-size: 28pt; opacity: .85; display: flex; gap: 18mm; }
+  header .badge { display: inline-block; font-size: 24pt; font-weight: 700; padding: 1mm 5mm; border-radius: 2mm; background: #fff; color: var(--navy); margin-bottom: 6mm; }
+
+  .claim {
+    margin: 12mm 0 0; padding: 9mm 14mm;
+    border-left: 5mm solid var(--blue); background: var(--blue-bg);
+    font-size: 32pt; line-height: 1.6; font-weight: 500;
+  }
+  .claim b { color: var(--navy); }
+  .claim .tag { display: block; font-size: 24pt; color: var(--blue); font-weight: 700; margin-bottom: 2mm; letter-spacing: 1pt; }
+
+  .grid { display: grid; gap: 10mm 16mm; margin-top: 10mm; }
+  .top { grid-template-columns: 1fr 1.25fr; }
+  .bottom { grid-template-columns: 1fr 1fr 1fr; flex: 1; }
+  section h2 {
+    font-size: 38pt; margin: 0 0 5mm; padding-bottom: 2.5mm;
+    color: var(--navy); border-bottom: 1.2mm solid var(--navy);
+    display: flex; align-items: baseline; gap: 5mm;
+  }
+  section h2 .n {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 15mm; height: 15mm; border-radius: 50%;
+    background: var(--navy); color: #fff; font-size: 26pt; flex: none;
+    transform: translateY(-1mm);
+  }
+  section + section { margin-top: 11mm; }
+  h3 { font-size: 29pt; margin: 6mm 0 2mm; color: var(--blue); }
+  p { margin: 0 0 3mm; }
+  ul, ol { margin: 0 0 3mm; padding-left: 1.3em; }
+  li { margin-bottom: 1.5mm; }
+  .small { font-size: 23pt; color: var(--muted); line-height: 1.5; }
+  .key { color: var(--blue); font-weight: 700; }
+  .warn { color: var(--orange); font-weight: 700; }
+
+  figure { margin: 0; }
+  .concept { border: 0.6mm solid var(--line); border-radius: 3mm; overflow: hidden; }
+  .concept img { width: 100%; display: block; }
+  .arch { border: 0.6mm solid var(--line); border-radius: 3mm; padding: 4mm; background: #fff; }
+  .arch svg { width: 100%; display: block; }
+  figcaption { font-size: 21pt; color: var(--muted); margin-top: 2.5mm; line-height: 1.45; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 22pt; line-height: 1.38; }
+  th, td { padding: 2.2mm 3mm; border-bottom: 0.4mm solid var(--line); text-align: left; vertical-align: top; }
+  th { background: var(--gray-bg); font-weight: 700; white-space: nowrap; }
+  td.id { font-weight: 700; color: var(--navy); white-space: nowrap; }
+  tr.prop td { background: var(--blue-bg); }
+
+  .learn { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; margin: 3mm 0 0; }
+  .learn div { padding: 3mm 4mm; border-radius: 2.5mm; background: var(--gray-bg); font-size: 22pt; line-height: 1.35; }
+  .learn div b { display: block; color: var(--navy); font-size: 24pt; }
+
+  .eq { font-family: "DejaVu Serif", serif; font-size: 25pt; line-height: 1.7; text-align: center; padding: 3mm 0; background: var(--gray-bg); border-radius: 2.5mm; margin: 3mm 0; }
+  .eq i { font-style: italic; }
+
+  .tl { list-style: none; padding: 0; margin: 0; position: relative; }
+  .tl::before { content: ""; position: absolute; left: 4mm; top: 3mm; bottom: 3mm; width: 0.8mm; background: var(--line); }
+  .tl li { position: relative; padding-left: 14mm; margin-bottom: 3mm; font-size: 22pt; line-height: 1.38; }
+  .tl li::before { content: ""; position: absolute; left: 1.2mm; top: 2.2mm; width: 6.4mm; height: 6.4mm; border-radius: 50%; background: #fff; border: 0.8mm solid var(--muted); }
+  .tl li.now::before { background: var(--orange); border-color: var(--orange); }
+  .tl li.now .when { color: var(--orange); }
+  .tl .when { font-weight: 700; color: var(--navy); display: block; }
+  .tl .out { display: block; color: var(--muted); font-size: 20pt; }
+
+  .min { padding: 6mm 8mm; border: 0.8mm solid var(--navy); border-radius: 3mm; }
+  .min ul { margin: 0; }
+
+  .refs { font-size: 18pt; color: var(--muted); line-height: 1.45; margin-top: 7mm; padding-top: 4mm; border-top: 0.4mm solid var(--line); }
+  .refs ol { padding-left: 1.4em; margin: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="badge">サブプロジェクト：作りながらハードウェアを学ぶ</div>
+  <div class="en">Kawasemi Rover: Building an Outdoor Quadruped<br>to Learn Robot Hardware from the Ground Up</div>
+  <div class="ja">カワセミ・ローバー ― 屋外四足歩行ロボットを自作して、ハードウェアの仕組みを理解する</div>
+  <div class="who"><span>武藤 雅裕</span><span>個人プロジェクト（計画・初期設計の段階）</span></div>
+</header>
+
+<div class="claim">
+  <span class="tag">ねらい</span>
+  研究では既製のロボットを使うので、<b>機構・モータ・電源・配線</b>は「中身を知らない箱」になりがちである。12 自由度の四足ロボットを <b>CAD 設計 → 3D プリント → 制御 → 屋外実験</b>まで自分で作り、ハードウェアがどう動いているかを手で理解する。
+</div>
+
+<div class="grid top">
+  <div>
+    <section>
+      <h2><span class="n">1</span>何を作るか</h2>
+      <p><b>Stanford Pupper v3</b> の機構と制御を参考にした、<b>屋外向けのオリジナル四足ロボット</b>。芝生や砂利道を歩き、巡回・探索・環境認識ができることを目指す。Pupper v3 のコピーではなく、筐体・機構・ソフトウェアは自分で設計する。</p>
+      <table>
+        <tr><th>項目</th><th>目標（初期案）</th></tr>
+        <tr><td class="id">サイズ</td><td>全長 35〜45 cm、幅 20〜25 cm、高さ 25〜35 cm</td></tr>
+        <tr><td class="id">重量</td><td>3〜5 kg</td></tr>
+        <tr><td class="id">自由度</td><td>12（1 脚 3 自由度 × 4 脚）</td></tr>
+        <tr><td class="id">フレーム</td><td>3D プリント（PETG 等）＋部分的な金属補強、足裏は TPU</td></tr>
+        <tr><td class="id">計算機</td><td>Jetson Orin Nano ＋ STM32 / ESP32</td></tr>
+        <tr><td class="id">センサ</td><td>RGB-D カメラ、3D LiDAR、IMU、関節エンコーダ</td></tr>
+        <tr><td class="id">ソフト</td><td>Ubuntu 22.04（JetPack 6）、ROS 2 Humble</td></tr>
+      </table>
+      <p class="small" style="margin-top:3mm">重量・寸法・関節トルク・電源容量は互いに影響するので、機構計算と実験の結果で決める。</p>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span>作りながら学ぶこと</h2>
+      <div class="learn">
+        <div><b>機械設計</b>Fusion で CAD、積層方向・応力集中・ねじ固定部</div>
+        <div><b>アクチュエータ</b>トルク・速度・重量・エンコーダの比較と選定</div>
+        <div><b>電源・配線</b>バッテリー、BMS、ヒューズ、系統の分離、非常停止</div>
+        <div><b>運動学・動力学</b>脚の順・逆運動学、必要トルクの推定</div>
+        <div><b>組込み・通信</b>マイコンの関節制御、CAN など、ROS 2 との接続</div>
+        <div><b>屋外対応</b>防塵・防滴、放熱、転倒時の衝撃、足裏のグリップ</div>
+      </div>
+    </section>
+  </div>
+
+  <div>
+    <section>
+      <h2><span class="n">3</span>コンセプトデザイン</h2>
+      <figure class="concept">
+        <img src="../images/kawasemi_rover_concept.png" alt="カワセミをモチーフにした四足ロボットの側面図">
+      </figure>
+      <figcaption>カワセミのコバルトブルーの背中、オレンジの腹部、黒く長いくちばし、赤い脚がモチーフ（仮）。頭頂に 3D LiDAR、目の位置に RGB-D カメラ、腹部に Jetson Orin Nano と電源、くちばしは前方のバンパー。寸法と機構は今後の設計で変わる。</figcaption>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span>Pupper v3 との違い</h2>
+      <table>
+        <tr><th>項目</th><th>Pupper v3</th><th>Kawasemi Rover</th></tr>
+        <tr><td class="id">主目的</td><td>教育・研究用</td><td>屋外の探索・巡回</td></tr>
+        <tr><td class="id">機械設計</td><td>公開設計</td><td>Fusion で独自設計、屋外対応</td></tr>
+        <tr><td class="id">計算機</td><td>Raspberry Pi 系</td><td>Jetson Orin Nano（VLA・SLAM を 1 台で）</td></tr>
+        <tr><td class="id">センサ</td><td>姿勢・関節</td><td>＋ 3D LiDAR、RGB-D</td></tr>
+        <tr><td class="id">制御</td><td>歩行・姿勢、RL 歩行</td><td>＋ 不整地適応、転倒回復、自律移動</td></tr>
+      </table>
+    </section>
+  </div>
+</div>
+
+<div class="grid bottom">
+  <div>
+    <section>
+      <h2><span class="n">5</span>システム構成</h2>
+      <figure class="arch">
+        <svg viewBox="0 0 640 710" role="img" aria-label="Jetson Orin Nano の上位処理、マイコンの関節制御、アクチュエータとセンサ、電源系統の分離を示す構成図">
+          <defs>
+            <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1d2430"/></marker>
+          </defs>
+          <g font-family="Noto Sans CJK JP" text-anchor="middle">
+            <!-- Jetson -->
+            <rect x="10" y="10" width="440" height="256" rx="14" fill="#e4f2fa" stroke="#0e7fc0" stroke-width="3"/>
+            <text x="230" y="46" font-size="24" font-weight="700" fill="#0b3f73">Jetson Orin Nano（ROS 2）</text>
+            <rect x="34" y="66" width="392" height="48" rx="8" fill="#fff" stroke="#9fb6cc"/>
+            <text x="230" y="98" font-size="20">Agentic AI・VLA（自然言語の指示）</text>
+            <rect x="34" y="126" width="392" height="48" rx="8" fill="#fff" stroke="#9fb6cc"/>
+            <text x="230" y="158" font-size="20">SLAM・Nav2（経路計画）</text>
+            <rect x="34" y="186" width="392" height="48" rx="8" fill="#fff" stroke="#9fb6cc"/>
+            <text x="230" y="218" font-size="20">歩容生成・RL 歩行ポリシー</text>
+            <!-- MCU -->
+            <rect x="10" y="336" width="440" height="100" rx="14" fill="#fdeedf" stroke="#c4601a" stroke-width="3"/>
+            <text x="230" y="378" font-size="24" font-weight="700" fill="#c4601a">STM32 / ESP32</text>
+            <text x="230" y="412" font-size="18">高頻度の関節制御・安全停止</text>
+            <line x1="160" y1="266" x2="160" y2="332" stroke="#1d2430" stroke-width="2.5" marker-end="url(#a)"/>
+            <text x="150" y="306" font-size="17" text-anchor="end">関節の目標</text>
+            <line x1="300" y1="336" x2="300" y2="270" stroke="#1d2430" stroke-width="2.5" marker-end="url(#a)"/>
+            <text x="310" y="306" font-size="17" text-anchor="start">関節状態</text>
+            <!-- Actuators -->
+            <rect x="10" y="506" width="210" height="100" rx="14" fill="#fff" stroke="#5a6474" stroke-width="2"/>
+            <text x="115" y="548" font-size="22" font-weight="700">アクチュエータ</text>
+            <text x="115" y="580" font-size="18">× 12（エンコーダ付き）</text>
+            <line x1="115" y1="436" x2="115" y2="502" stroke="#1d2430" stroke-width="2.5" marker-end="url(#a)"/>
+            <!-- Sensors -->
+            <rect x="240" y="506" width="210" height="100" rx="14" fill="#fff" stroke="#5a6474" stroke-width="2"/>
+            <text x="345" y="548" font-size="22" font-weight="700">センサ</text>
+            <text x="345" y="580" font-size="18">LiDAR・RGB-D・IMU</text>
+            <path d="M450,556 L480,556 L480,160 L454,160" fill="none" stroke="#1d2430" stroke-width="2.5" marker-end="url(#a)"/>
+            <!-- Power -->
+            <rect x="500" y="10" width="130" height="596" rx="14" fill="#f2f3f5" stroke="#5a6474" stroke-width="2"/>
+            <text x="565" y="50" font-size="22" font-weight="700">電源</text>
+            <text x="565" y="84" font-size="17">バッテリー</text>
+            <text x="565" y="108" font-size="17">BMS・ヒューズ</text>
+            <text x="565" y="256" font-size="17" fill="#0e7fc0" font-weight="700">計算機系</text>
+            <text x="565" y="280" font-size="16" fill="#5a6474">最大 25 W 程度</text>
+            <text x="565" y="516" font-size="17" fill="#c4601a" font-weight="700">モータ系</text>
+            <text x="565" y="540" font-size="16" fill="#5a6474">系統を分ける</text>
+            <line x1="500" y1="236" x2="454" y2="200" stroke="#0e7fc0" stroke-width="3" stroke-dasharray="8 5"/>
+            <path d="M565,606 L565,626 L115,626 L115,610" fill="none" stroke="#c4601a" stroke-width="3" stroke-dasharray="8 5"/>
+            <!-- E-stop -->
+            <rect x="10" y="646" width="620" height="60" rx="30" fill="#fff" stroke="#c4601a" stroke-width="2.5"/>
+            <text x="320" y="685" font-size="20" font-weight="700" fill="#c4601a">非常停止回路・Watchdog・転倒判定</text>
+          </g>
+        </svg>
+      </figure>
+      <figcaption>速い制御はマイコン、重い推論は Jetson に分ける。モータ電源と計算機電源は系統を分け、電圧降下やノイズで計算機が落ちないようにする。</figcaption>
+    </section>
+
+    <section>
+      <h2><span class="n">6</span>1 脚 3 自由度の設計</h2>
+      <p>股関節の左右（Ab/Ad）・前後（Flex/Ext）と膝の 3 関節。まず 1 脚だけ作り、計算と実測を比べる。</p>
+      <div class="eq"><i>p</i> = <i>f</i>(<i>q</i>),&ensp; <i>ṗ</i> = <i>J</i>(<i>q</i>) <i>q̇</i><br><i>M</i>(<i>q</i>)<i>q̈</i> + <i>C</i>(<i>q</i>,<i>q̇</i>)<i>q̇</i> + <i>g</i>(<i>q</i>) = <i>τ</i> + <i>J</i><sub><i>c</i></sub><sup>T</sup><i>f</i><sub><i>c</i></sub></div>
+      <p class="small">MATLAB で順・逆運動学、Simscape Multibody で必要トルク <i>τ</i> を推定し、アクチュエータの選定に使う。</p>
+    </section>
+  </div>
+
+  <div>
+    <section>
+      <h2><span class="n">7</span>地形に合わせた寸法の最適化</h2>
+      <p>平地・芝生・砂利・段差・斜面で、適した脚の長さや胴体の寸法は違う。CAD の詳細設計に入る前に、<b>シミュレーションで寸法を決める</b>。</p>
+      <p class="small">参考：RoboGrammar（SIGGRAPH Asia 2020）。構成の探索まではせず、四足 12 自由度の構成は固定して寸法だけを最適化する。</p>
+      <table>
+        <tr><th>パラメータ</th><th>効くところ</th></tr>
+        <tr><td class="id">大腿・下腿の長さ</td><td>歩幅、段差、必要トルク</td></tr>
+        <tr><td class="id">股関節の配置</td><td>前後・左右の脚間隔</td></tr>
+        <tr><td class="id">胴体・重心位置</td><td>安定性、斜面での姿勢</td></tr>
+        <tr><td class="id">足先形状</td><td>接地面積、滑り</td></tr>
+        <tr><td class="id">関節の可動範囲</td><td>姿勢回復、転倒復帰</td></tr>
+      </table>
+      <h3>評価の流れ</h3>
+      <ol>
+        <li>寸法をパラメータにした URDF / MJCF を作る</li>
+        <li>MuJoCo に平地・凹凸・溝・斜面・低摩擦面を用意する</li>
+        <li>候補ごとに歩行制御（MPC か RL）を最適化して評価する</li>
+        <li>速度・エネルギー・転倒率・関節トルクを比べる</li>
+        <li>アクチュエータと 3D プリントの制約内で選ぶ</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2><span class="n">8</span>屋外で試すこと</h2>
+      <ul>
+        <li>平坦地の歩行速度、芝生・砂利道での歩行</li>
+        <li>小さな段差の乗り越え、斜面での姿勢</li>
+        <li>バッテリー持続時間、<b>関節温度</b>、転倒回数</li>
+      </ul>
+      <p class="small">初号機は乾いた平坦地と軽い凹凸が対象。泥地・雨天・急斜面は段階的に試す。</p>
+    </section>
+  </div>
+
+  <div>
+    <section>
+      <h2><span class="n">9</span>ロードマップ</h2>
+      <ul class="tl">
+        <li class="now"><span class="when">Phase 1：1 脚の試作</span>寸法の評価、Fusion で設計、IK・トルク推定、Python から関節を動かす<span class="out">→ 3 自由度のオリジナル脚</span></li>
+        <li><span class="when">Phase 2：四足の製作</span>胴体・4 脚・バッテリー配置・IMU・ROS 2<span class="out">→ 12 自由度の四足ロボット</span></li>
+        <li><span class="when">Phase 3：RL 歩行</span>URDF・MuJoCo、PPO で歩行を学習、Sim2Real<span class="out">→ RL で歩けるロボット</span></li>
+        <li><span class="when">Phase 4：屋外走破性</span>足裏・筐体の改良、芝生・砂利・段差・斜面<span class="out">→ 屋外対応の四足ロボット</span></li>
+        <li><span class="when">Phase 5：自律移動</span>RGB-D・LiDAR、SLAM、Nav2、屋外巡回</li>
+        <li><span class="when">Phase 6：VLA・Agentic AI</span>自然言語での探索、世界モデル、失敗検知と回復</li>
+      </ul>
+      <p class="small" style="margin-top:3mm">いまは計画・初期設計の段階。アクチュエータは<b>まず 3 個だけ買って 1 脚を作り</b>、性能を確かめてから 12 個に増やす。</p>
+    </section>
+
+    <section>
+      <h2><span class="n">10</span>注意していること</h2>
+      <div class="min">
+        <ul>
+          <li><b>安全から作る。</b>関節の可動範囲とトルクの制限、非常停止、最初の実機試験は支持具に吊るして行う</li>
+          <li><b>費用。</b>概算 20〜60 万円で、大半は関節アクチュエータ 12 個。1 脚で確かめてから増やす</li>
+          <li><b>ライセンス。</b>Pupper v3 の設計やコードを使うときは、リポジトリ・CAD・ファームウェアごとに確認する</li>
+        </ul>
+      </div>
+      <p class="small" style="margin-top:3mm">本業の研究（視触覚の世界モデルによる失敗予測）とは別の、ハードウェアを学ぶためのサブプロジェクト。Phase 6 では、研究で扱う失敗検知と回復を四足ロボットでも試したい。</p>
+    </section>
+
+    <div class="refs">
+      <ol>
+        <li>Stanford Pupper v3 Documentation, pupper-v3-documentation.readthedocs.io</li>
+        <li>A. Zhao et al., RoboGrammar, ACM TOG 39(6), SIGGRAPH Asia 2020.</li>
+        <li>J. Xu et al., Multi-Objective Graph Heuristic Search for Terrestrial Robot Design, ICRA 2021.</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
