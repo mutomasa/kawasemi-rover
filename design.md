@@ -116,9 +116,9 @@ Stanford Pupper v3は、教育・研究用途向けのオープンソース四�
 | 外装 | PETG等 |
 | 足裏 | TPU等の高摩擦材料 |
 | アクチュエータ | エンコーダ付き関節駆動モータ |
-| メインPC | Raspberry Pi 5 / NVIDIA Jetson |
+| メインPC | NVIDIA Jetson Orin Nano（[決定 0001](docs/decisions/0001-main-computer-jetson-orin-nano.md)） |
 | マイコン | STM32 / ESP32 |
-| OS | Ubuntu |
+| OS | Ubuntu 22.04（JetPack 6） |
 | 通信 | ROS 2 |
 | カメラ | RGB-D |
 | LiDAR | 3D LiDAR |
@@ -765,7 +765,7 @@ Agentic AIが分析・再計画を担当し、関節の高速制御は独立し�
 | 3Dプリント試作・材料 | 1万〜3万円 |
 | 関節アクチュエータ12個 | 10万〜25万円以上 |
 | フレーム補強・機械部品 | 2万〜5万円 |
-| Raspberry Pi / Jetson | 1万〜10万円 |
+| Jetson Orin Nano | 4万〜6万円 |
 | モータ制御・電源基板 | 1万〜4万円 |
 | バッテリー・安全回路 | 2万〜5万円 |
 | センサ搭載・配線部品 | 1万〜5万円 |

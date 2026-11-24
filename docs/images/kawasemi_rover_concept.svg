@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" font-family="'Noto Sans CJK JP','Noto Sans CJK TC',sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EAF4F7"/><stop offset="1" stop-color="#F8F6F0"/>
+    </linearGradient>
+    <linearGradient id="shell" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B4F9C"/><stop offset="0.5" stop-color="#0E7FC0"/><stop offset="1" stop-color="#05A3C7"/>
+    </linearGradient>
+    <linearGradient id="wing" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0A3F7A"/><stop offset="1" stop-color="#0D6AA8"/>
+    </linearGradient>
+    <linearGradient id="belly" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F59A3A"/><stop offset="1" stop-color="#D9682A"/>
+    </linearGradient>
+    <linearGradient id="beak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3A4048"/><stop offset="1" stop-color="#15181C"/>
+    </linearGradient>
+    <linearGradient id="shin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F06A3B"/><stop offset="1" stop-color="#C9442A"/>
+    </linearGradient>
+    <linearGradient id="thigh" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2C5F8F"/><stop offset="1" stop-color="#173E63"/>
+    </linearGradient>
+    <radialGradient id="lens" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#7FE3FF"/><stop offset="0.35" stop-color="#1B3A55"/><stop offset="1" stop-color="#05080C"/>
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="bodyClip">
+      <path id="bodyPath" d="M470 425 C520 345 690 318 870 326 C1000 332 1085 362 1130 415 L1130 462 C1090 508 960 528 800 528 C650 528 535 505 470 462 Z"/>
+    </clipPath>
+    <pattern id="spots" width="18" height="14" patternUnits="userSpaceOnUse">
+      <ellipse cx="6" cy="5" rx="3.2" ry="1.8" fill="#6FD4F2" opacity="0.85"/>
+      <ellipse cx="15" cy="12" rx="3.2" ry="1.8" fill="#6FD4F2" opacity="0.6"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+
+  <!-- title -->
+  <text x="60" y="78" font-size="40" font-weight="700" fill="#0B3A66">Kawasemi Rover</text>
+  <text x="60" y="114" font-size="20" fill="#3A5A75">コンセプトデザイン（仮）— カワセミをモチーフにした屋外四足ロボット / 側面図</text>
+
+  <!-- ground: riverbank -->
+  <path d="M0 785 Q400 772 800 782 T1600 780 L1600 900 L0 900 Z" fill="#D9D3C2"/>
+  <path d="M0 785 Q400 772 800 782 T1600 780" stroke="#B9B09A" stroke-width="2" fill="none"/>
+  <g fill="#BDB49E">
+    <ellipse cx="210" cy="812" rx="22" ry="8"/><ellipse cx="1240" cy="820" rx="30" ry="9"/>
+    <ellipse cx="760" cy="835" rx="16" ry="6"/><ellipse cx="1460" cy="806" rx="14" ry="5"/>
+  </g>
+  <g stroke="#8FAE6A" stroke-width="3" stroke-linecap="round">
+    <path d="M120 786 l-6 -22 M126 786 l2 -28 M132 786 l8 -20"/>
+    <path d="M1380 782 l-6 -20 M1386 782 l3 -26 M1392 782 l9 -18"/>
+  </g>
+  <ellipse cx="830" cy="785" rx="420" ry="16" fill="#000" opacity="0.10"/>
+
+  <!-- ===== far-side legs (darker, different gait phase) ===== -->
+  <g opacity="0.5">
+    <path d="M985 450 L1050 590" stroke="#173E63" stroke-width="30" stroke-linecap="round"/>
+    <path d="M1050 590 L1115 742" stroke="#A8402A" stroke-width="22" stroke-linecap="round"/>
+    <ellipse cx="1118" cy="746" rx="22" ry="11" fill="#22262B"/>
+    <path d="M620 450 L672 600" stroke="#173E63" stroke-width="30" stroke-linecap="round"/>
+    <path d="M672 600 L590 770" stroke="#A8402A" stroke-width="22" stroke-linecap="round"/>
+    <ellipse cx="588" cy="772" rx="22" ry="11" fill="#22262B"/>
+    <circle cx="1050" cy="590" r="15" fill="#2A2F36"/><circle cx="672" cy="600" r="15" fill="#2A2F36"/>
+  </g>
+
+  <!-- ===== tail (antenna / e-stop) ===== -->
+  <path d="M490 418 L368 352 L352 400 L476 462 Z" fill="url(#wing)" stroke="#072E55" stroke-width="2.5"/>
+  <path d="M368 352 L332 344 L322 392 L352 400 Z" fill="#0A3360"/>
+  <line x1="350" y1="350" x2="330" y2="270" stroke="#2A2F36" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="330" cy="266" r="7" fill="#4FD8FF" filter="url(#glow)"/>
+  <circle cx="420" cy="398" r="11" fill="#E53935" stroke="#7A1210" stroke-width="3"/>
+
+  <!-- ===== body ===== -->
+  <g clip-path="url(#bodyClip)">
+    <rect x="460" y="300" width="700" height="240" fill="url(#shell)"/>
+    <!-- orange belly -->
+    <path d="M460 470 C600 455 760 450 900 455 C1000 458 1080 448 1160 430 L1160 540 L460 540 Z" fill="url(#belly)"/>
+    <!-- belly vents -->
+    <g stroke="#B8541F" stroke-width="3" stroke-linecap="round" opacity="0.7">
+      <line x1="720" y1="490" x2="760" y2="490"/><line x1="720" y1="502" x2="760" y2="502"/><line x1="720" y1="514" x2="760" y2="514"/><line x1="780" y1="490" x2="820" y2="490"/><line x1="780" y1="502" x2="820" y2="502"/><line x1="780" y1="514" x2="820" y2="514"/>
+    </g>
+  </g>
+  <use href="#bodyPath" fill="none" stroke="#08345E" stroke-width="3"/>
+
+  <!-- folded wing panel -->
+  <path d="M560 380 C640 350 820 352 920 380 C870 420 760 448 640 452 C590 452 552 440 530 425 Z" fill="url(#wing)" stroke="#072E55" stroke-width="2.5"/>
+  <path d="M560 380 C640 350 820 352 920 380 C870 420 760 448 640 452 C590 452 552 440 530 425 Z" fill="url(#spots)"/>
+  <g stroke="#072E55" stroke-width="2" fill="none" opacity="0.8">
+    <path d="M610 448 L560 470"/><path d="M640 452 L600 478"/><path d="M672 450 L640 480"/>
+  </g>
+  <!-- panel screws -->
+  <g fill="#9CC7E0"><circle cx="575" cy="398" r="3"/><circle cx="890" cy="384" r="3"/><circle cx="660" cy="440" r="3"/></g>
+
+  <!-- dorsal LED stripe (electric-blue back) -->
+  <path d="M520 382 C610 342 760 330 880 334 C980 338 1060 360 1105 396" stroke="#54E1FF" stroke-width="7" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- ===== head ===== -->
+  <g>
+    <!-- neck/head shell -->
+    <path d="M1090 370 C1110 320 1160 300 1210 306 C1262 312 1290 350 1292 398 C1294 440 1268 470 1220 478 C1170 486 1120 470 1100 448 Z" fill="url(#shell)" stroke="#08345E" stroke-width="3"/>
+    <!-- barred crown -->
+    <g stroke="#7ADAF5" stroke-width="3" stroke-linecap="round" opacity="0.9">
+      <path d="M1150 330 l14 -6"/><path d="M1172 322 l14 -4"/><path d="M1196 318 l14 -2"/><path d="M1222 320 l13 2"/><path d="M1246 328 l12 5"/>
+      <path d="M1160 346 l14 -5"/><path d="M1186 340 l14 -3"/><path d="M1212 338 l14 1"/><path d="M1238 344 l12 4"/>
+    </g>
+    <!-- orange cheek band -->
+    <path d="M1135 400 C1170 380 1240 378 1290 392 L1292 418 C1240 412 1180 420 1140 436 Z" fill="url(#belly)"/>
+    <!-- white throat patch -->
+    <path d="M1112 424 C1130 418 1150 422 1160 438 C1150 458 1126 462 1108 452 Z" fill="#F7F4EE"/>
+    <path d="M1240 440 C1260 432 1282 432 1290 438 C1282 460 1256 470 1236 466 Z" fill="#F7F4EE"/>
+    <!-- RGB-D camera "eye" -->
+    <rect x="1196" y="354" width="78" height="34" rx="14" fill="#14181D" stroke="#08345E" stroke-width="2"/>
+    <circle cx="1216" cy="371" r="11" fill="url(#lens)"/>
+    <circle cx="1254" cy="371" r="11" fill="url(#lens)"/>
+    <circle cx="1235" cy="371" r="3" fill="#E53935"/>
+    <!-- 3D LiDAR crest -->
+    <rect x="1170" y="276" width="70" height="30" rx="6" fill="#1E2329"/>
+    <rect x="1176" y="286" width="58" height="8" rx="3" fill="#4FD8FF" opacity="0.85" filter="url(#glow)"/>
+    <rect x="1182" y="268" width="46" height="10" rx="4" fill="#2E343B"/>
+  </g>
+
+  <!-- ===== beak (front bumper + ToF) ===== -->
+  <path d="M1286 372 L1490 412 C1496 414 1496 418 1490 420 L1286 448 Z" fill="url(#beak)" stroke="#0E1114" stroke-width="2"/>
+  <line x1="1290" y1="412" x2="1480" y2="415" stroke="#5A626C" stroke-width="2"/>
+  <circle cx="1320" cy="400" r="5" fill="#4FD8FF" filter="url(#glow)"/>
+
+  <!-- ===== near-side legs ===== -->
+  <!-- front -->
+  <path d="M1010 455 L1085 605" stroke="url(#thigh)" stroke-width="36" stroke-linecap="round"/>
+  <path d="M1085 605 L1030 768" stroke="url(#shin)" stroke-width="26" stroke-linecap="round"/>
+  <ellipse cx="1030" cy="772" rx="26" ry="12" fill="#22262B"/>
+  <circle cx="1085" cy="605" r="18" fill="#2A2F36" stroke="#0F1215" stroke-width="3"/>
+  <circle cx="1085" cy="605" r="6" fill="#9AA4AE"/>
+  <!-- rear -->
+  <path d="M640 455 L705 605" stroke="url(#thigh)" stroke-width="36" stroke-linecap="round"/>
+  <path d="M705 605 L660 768" stroke="url(#shin)" stroke-width="26" stroke-linecap="round"/>
+  <ellipse cx="660" cy="772" rx="26" ry="12" fill="#22262B"/>
+  <circle cx="705" cy="605" r="18" fill="#2A2F36" stroke="#0F1215" stroke-width="3"/>
+  <circle cx="705" cy="605" r="6" fill="#9AA4AE"/>
+  <!-- hip actuators -->
+  <g>
+    <circle cx="1010" cy="455" r="40" fill="#1E2329" stroke="#0B0D10" stroke-width="3"/>
+    <circle cx="1010" cy="455" r="27" fill="#2E343B"/><circle cx="1010" cy="455" r="9" fill="#F59A3A"/>
+    <circle cx="640" cy="455" r="40" fill="#1E2329" stroke="#0B0D10" stroke-width="3"/>
+    <circle cx="640" cy="455" r="27" fill="#2E343B"/><circle cx="640" cy="455" r="9" fill="#F59A3A"/>
+  </g>
+
+  <!-- ===== callouts ===== -->
+  <g font-size="17" fill="#1F3448">
+    <g stroke="#6B879E" stroke-width="1.5" fill="none">
+      <polyline points="1205,268 1205,222"/>
+      <polyline points="1262,362 1330,292 1380,292"/>
+      <polyline points="1440,416 1462,482"/>
+      <polyline points="800,330 800,256"/>
+      <polyline points="640,396 580,300 520,300"/>
+      <polyline points="330,262 330,232"/>
+      <polyline points="640,455 540,560 520,560"/>
+      <polyline points="870,505 870,640"/>
+      <polyline points="1066,690 1180,690"/>
+    </g>
+    <g fill="#6B879E"><circle cx="1205" cy="268" r="3.5"/><circle cx="1262" cy="362" r="3.5"/><circle cx="1440" cy="416" r="3.5"/><circle cx="800" cy="330" r="3.5"/><circle cx="640" cy="396" r="3.5"/><circle cx="330" cy="262" r="3.5"/><circle cx="640" cy="455" r="3.5"/><circle cx="870" cy="505" r="3.5"/><circle cx="1066" cy="690" r="3.5"/></g>
+    <text x="1205" y="192" font-weight="700" text-anchor="middle">3D LiDAR</text>
+    <text x="1205" y="213" font-size="14" fill="#4A6378" text-anchor="middle">頭頂の冠羽に見立てたセンサ部</text>
+    <text x="1388" y="288" font-weight="700">RGB-D カメラ</text>
+    <text x="1388" y="310" font-size="14" fill="#4A6378">カワセミの「眼」</text>
+    <text x="1462" y="506" font-weight="700" text-anchor="middle">くちばし型バンパー</text>
+    <text x="1462" y="528" font-size="14" fill="#4A6378" text-anchor="middle">前方 ToF センサ・衝突保護</text>
+    <text x="800" y="226" font-weight="700" text-anchor="middle">背面 LED ライン</text>
+    <text x="800" y="248" font-size="14" fill="#4A6378" text-anchor="middle">背中のコバルトブルーの輝き</text>
+    <text x="512" y="296" font-weight="700" text-anchor="end">翼パネル</text>
+    <text x="512" y="318" font-size="14" fill="#4A6378" text-anchor="end">バッテリーの着脱カバー</text>
+    <text x="330" y="204" font-weight="700" text-anchor="middle">尾部アンテナ</text>
+    <text x="330" y="226" font-size="14" fill="#4A6378" text-anchor="middle">＋ 非常停止ボタン（赤）</text>
+    <text x="512" y="556" font-weight="700" text-anchor="end">股関節アクチュエータ</text>
+    <text x="512" y="578" font-size="14" fill="#4A6378" text-anchor="end">Hip Ab/Ad・Flex/Ext</text>
+    <text x="870" y="664" font-weight="700" text-anchor="middle">オレンジの腹部（計算機）</text>
+    <text x="870" y="686" font-size="14" fill="#4A6378" text-anchor="middle">Jetson Orin Nano・電源ベイ</text>
+    <text x="1190" y="686" font-weight="700">赤橙の下腿 + TPU 足裏</text>
+    <text x="1190" y="708" font-size="14" fill="#4A6378">カワセミの赤い脚を表現</text>
+  </g>
+
+  <!-- ===== palette ===== -->
+  <g font-size="13" fill="#3A4A58">
+    <text x="60" y="826" font-size="14" font-weight="700" fill="#1F3448">カラーパレット</text>
+    <g transform="translate(60,840)">
+      <rect width="22" height="22" rx="4" fill="#0E7FC0"/><text x="30" y="16">コバルトブルー</text>
+      <rect x="150" width="22" height="22" rx="4" fill="#54E1FF"/><text x="180" y="16">シアン</text>
+      <rect x="250" width="22" height="22" rx="4" fill="#F59A3A"/><text x="280" y="16">オレンジ</text>
+      <rect x="360" width="22" height="22" rx="4" fill="#E4572E"/><text x="390" y="16">赤橙</text>
+      <rect x="450" width="22" height="22" rx="4" fill="#F7F4EE" stroke="#B9B09A"/><text x="480" y="16">ホワイト</text>
+      <rect x="560" width="22" height="22" rx="4" fill="#1E2329"/><text x="590" y="16">チャコール</text>
+    </g>
+  </g>
+</svg>
