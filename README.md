@@ -2,6 +2,10 @@
 
 **Stanford Pupper v3 を参考にした、オリジナルの屋外四足歩行ロボット開発プロジェクト**
 
+![Kawasemi Rover コンセプトデザイン（仮）](docs/images/kawasemi_rover_concept.png)
+
+*コンセプトデザイン（仮）。カワセミのコバルトブルーの背中、オレンジの腹部、黒く長いくちばし、赤い脚をモチーフにしています。寸法や機構は今後の設計で変わります。元データは [SVG](docs/images/kawasemi_rover_concept.svg) です。*
+
 Kawasemi Rover（仮称）は、3D プリンタで製作する 12 自由度の四足歩行ロボットです。芝生や砂利道などの屋外不整地を歩き、巡回・探索・環境認識ができるロボットを目指しています。
 
 [Stanford Pupper v3](https://pupper-v3-documentation.readthedocs.io/en/latest/) の機構設計と制御技術を参考にしますが、Pupper v3 のコピーではありません。筐体・機構・ソフトウェアは屋外向けに独自設計します。
@@ -66,8 +70,8 @@ VLA は上位の行動計画を受け持ち、12 関節の歩行制御は RL ポ
 | 自由度 | 12（Hip Ab/Ad、Hip Flex/Ext、Knee × 4 脚） |
 | フレーム・外装 | 3D プリント（PETG 等）+ 部分的な金属補強 |
 | 足裏 | TPU 等の高摩擦材料 |
-| 計算機 | Raspberry Pi 5 / NVIDIA Jetson + STM32 / ESP32 |
-| ソフトウェア | Ubuntu / ROS 2 |
+| 計算機 | NVIDIA Jetson Orin Nano（[決定 0001](docs/decisions/0001-main-computer-jetson-orin-nano.md)）+ STM32 / ESP32 |
+| ソフトウェア | Ubuntu 22.04（JetPack 6）/ ROS 2 Humble |
 | センサ | RGB-D カメラ、3D LiDAR、IMU、関節エンコーダ |
 | 歩行制御 | IK + 姿勢制御 + RL |
 
