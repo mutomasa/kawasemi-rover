@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kawasemi Rover poster</title>
+<style>
+  @page { size: 841mm 1189mm; margin: 0; }
+  :root {
+    --ink: #1d2430;
+    --muted: #5a6474;
+    --navy: #0b3f73;
+    --blue: #0e7fc0;
+    --blue-bg: #e4f2fa;
+    --orange: #c4601a;
+    --orange-bg: #fdeedf;
+    --gray-bg: #f2f3f5;
+    --line: #c9cfd8;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #ffffff; }
+  body {
+    width: 841mm; height: 1189mm; overflow: hidden;
+    font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+    color: var(--ink); font-size: 27pt; line-height: 1.55;
+    
+  }
+  .page { padding: 0 26mm 16mm; height: 100%; display: flex; flex-direction: column; }
+
+  header {
+    margin: 0 -26mm; padding: 20mm 26mm 14mm;
+    background: linear-gradient(100deg, #0b3f73 0%, #0e6fae 70%, #0e7fc0 100%); color: #fff;
+    border-bottom: 4mm solid #ef8a35;
+  }
+  header .en { font-size: 58pt; font-weight: 700; line-height: 1.18; letter-spacing: -0.5pt; }
+  header .ja { font-size: 44pt; font-weight: 500; margin-top: 6mm; opacity: .95; }
+  header .who { margin-top: 9mm; font-size: 28pt; opacity: .85; display: flex; gap: 18mm; }
+  header .badge { display: inline-block; font-size: 24pt; font-weight: 700; padding: 1mm 5mm; border-radius: 2mm; background: #fff; color: var(--navy); margin-bottom: 6mm; }
+
+  .claim {
+    margin: 12mm 0 0; padding: 9mm 14mm;
+    border-left: 5mm solid var(--blue); background: var(--blue-bg);
+    font-size: 32pt; line-height: 1.6; font-weight: 500;
+  }
+  .claim b { color: var(--navy); }
+  .claim .tag { display: block; font-size: 24pt; color: var(--blue); font-weight: 700; margin-bottom: 2mm; letter-spacing: 1pt; }
+
+  .grid { display: grid; gap: 10mm 16mm; margin-top: 10mm; }
+  .top { grid-template-columns: 1fr 1.25fr; }
+  .bottom { grid-template-columns: 1fr 1fr 1fr; flex: 1; }
+  section h2 {
+    font-size: 38pt; margin: 0 0 5mm; padding-bottom: 2.5mm;
+    color: var(--navy); border-bottom: 1.2mm solid var(--navy);
+    display: flex; align-items: baseline; gap: 5mm;
+  }
+  section h2 .n {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 15mm; height: 15mm; border-radius: 50%;
+    background: var(--navy); color: #fff; font-size: 26pt; flex: none;
+    transform: translateY(-1mm);
+  }
+  section + section { margin-top: 11mm; }
+  h3 { font-size: 29pt; margin: 6mm 0 2mm; color: var(--blue); }
+  p { margin: 0 0 3mm; }
+  ul, ol { margin: 0 0 3mm; padding-left: 1.3em; }
+  li { margin-bottom: 1.5mm; }
+  .small { font-size: 23pt; color: var(--muted); line-height: 1.5; }
+  .key { color: var(--blue); font-weight: 700; }
+  .warn { color: var(--orange); font-weight: 700; }
+
+  figure { margin: 0; }
+  .concept { border: 0.6mm solid var(--line); border-radius: 3mm; overflow: hidden; }
+  .concept img { width: 100%; display: block; }
+  .arch { border: 0.6mm solid var(--line); border-radius: 3mm; padding: 4mm; background: #fff; }
+  .arch svg { width: 100%; display: block; }
+  figcaption { font-size: 21pt; color: var(--muted); margin-top: 2.5mm; line-height: 1.45; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 22pt; line-height: 1.38; }
+  th, td { padding: 2.2mm 3mm; border-bottom: 0.4mm solid var(--line); text-align: left; vertical-align: top; }
+  th { background: var(--gray-bg); font-weight: 700; white-space: nowrap; }
+  td.id { font-weight: 700; color: var(--navy); white-space: nowrap; }
+  tr.prop td { background: var(--blue-bg); }
+
+  .learn { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; margin: 3mm 0 0; }
+  .learn div { padding: 3mm 4mm; border-radius: 2.5mm; background: var(--gray-bg); font-size: 22pt; line-height: 1.35; }
+  .learn div b { display: block; color: var(--navy); font-size: 24pt; }
+
+  .eq { font-family: "DejaVu Serif", serif; font-size: 25pt; line-height: 1.7; text-align: center; padding: 3mm 0; background: var(--gray-bg); border-radius: 2.5mm; margin: 3mm 0; }
+  .eq i { font-style: italic; }
+
+  .tl { list-style: none; padding: 0; margin: 0; position: relative; }
+  .tl::before { content: ""; position: absolute; left: 4mm; top: 3mm; bottom: 3mm; width: 0.8mm; background: var(--line); }
+  .tl li { position: relative; padding-left: 14mm; margin-bottom: 3mm; font-size: 22pt; line-height: 1.38; }
+  .tl li::before { content: ""; position: absolute; left: 1.2mm; top: 2.2mm; width: 6.4mm; height: 6.4mm; border-radius: 50%; background: #fff; border: 0.8mm solid var(--muted); }
+  .tl li.now::before { background: var(--orange); border-color: var(--orange); }
+  .tl li.now .when { color: var(--orange); }
+  .tl .when { font-weight: 700; color: var(--navy); display: block; }
+  .tl .out { display: block; color: var(--muted); font-size: 20pt; }
+
+  .min { padding: 6mm 8mm; border: 0.8mm solid var(--navy); border-radius: 3mm; }
+  .min ul { margin: 0; }
+
+  .refs { font-size: 18pt; color: var(--muted); line-height: 1.45; margin-top: 7mm; padding-top: 4mm; border-top: 0.4mm solid var(--line); }
+  .refs ol { padding-left: 1.4em; margin: 0; }
+  body { font-size: 26pt; }
+  section + section { margin-top: 9mm; }
+  .small { font-size: 22pt; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="badge">Side project: learning hardware by building</div>
+  <div class="en">Kawasemi Rover: Building an Outdoor Quadruped<br>to Learn Robot Hardware from the Ground Up</div>
+  <div class="ja">An original 12-DoF legged robot, designed in CAD, 3D-printed and taken outdoors</div>
+  <div class="who"><span>Masahiro Muto</span><span>Personal project (planning and early design)</span></div>
+</header>
+
+<div class="claim">
+  <span class="tag">WHY</span>
+  My research uses off-the-shelf robots, so the <b>mechanics, motors, power and wiring</b> stay a black box. By taking a 12-DoF quadruped all the way from <b>CAD → 3D printing → control → outdoor tests</b> myself, I want a hands-on understanding of how robot hardware works.
+</div>
+
+<div class="grid top">
+  <div>
+    <section>
+      <h2><span class="n">1</span>What I am building</h2>
+      <p>An <b>original outdoor quadruped</b> that draws on the mechanics and control of <b>Stanford Pupper v3</b>. The goal is to walk on grass and gravel and to patrol, explore and perceive its surroundings. It is not a copy of Pupper v3: the body, mechanisms and software are my own design.</p>
+      <table>
+        <tr><th>Item</th><th>Target (initial)</th></tr>
+        <tr><td class="id">Size</td><td>L 35–45 cm, W 20–25 cm, H 25–35 cm</td></tr>
+        <tr><td class="id">Weight</td><td>3–5 kg</td></tr>
+        <tr><td class="id">DoF</td><td>12 (3 per leg × 4 legs)</td></tr>
+        <tr><td class="id">Frame</td><td>3D-printed (PETG etc.) with partial metal reinforcement; TPU feet</td></tr>
+        <tr><td class="id">Compute</td><td>Jetson Orin Nano + STM32 / ESP32</td></tr>
+        <tr><td class="id">Sensors</td><td>RGB-D camera, 3D LiDAR, IMU, joint encoders</td></tr>
+        <tr><td class="id">Software</td><td>Ubuntu 22.04 (JetPack 6), ROS 2 Humble</td></tr>
+      </table>
+      <p class="small" style="margin-top:3mm">Weight, size, joint torque and battery capacity depend on each other, so they will be fixed by calculation and experiment.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span>What I learn along the way</h2>
+      <div class="learn">
+        <div><b>Mechanical design</b>CAD in Fusion; print orientation, stress concentration, screw bosses</div>
+        <div><b>Actuators</b>Comparing torque, speed, weight and encoders</div>
+        <div><b>Power and wiring</b>Battery, BMS, fuses, separate rails, emergency stop</div>
+        <div><b>Kinematics and dynamics</b>Leg forward/inverse kinematics, torque estimates</div>
+        <div><b>Embedded and comms</b>Joint control on an MCU, CAN, link to ROS 2</div>
+        <div><b>Outdoor readiness</b>Dust and splash, cooling, fall impacts, foot grip</div>
+      </div>
+    </section>
+  </div>
+
+  <div>
+    <section>
+      <h2><span class="n">3</span>Concept design</h2>
+      <figure class="concept">
+        <img src="../images/kawasemi_rover_concept.png" alt="Side view of a quadruped robot styled after a kingfisher">
+      </figure>
+      <figcaption>Styled after a kingfisher (<i>kawasemi</i>): cobalt-blue back, orange belly, long black beak, red legs (tentative). A 3D LiDAR on the crown, an RGB-D camera at the eyes, the Jetson and power bay in the belly, and the beak as a front bumper. Labels in the drawing are in Japanese; dimensions and mechanisms will change.</figcaption>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span>How it differs from Pupper v3</h2>
+      <table>
+        <tr><th>Item</th><th>Pupper v3</th><th>Kawasemi Rover</th></tr>
+        <tr><td class="id">Purpose</td><td>Education and research</td><td>Outdoor exploration and patrol</td></tr>
+        <tr><td class="id">Mechanics</td><td>Open design</td><td>Own design in Fusion, built for outdoors</td></tr>
+        <tr><td class="id">Compute</td><td>Raspberry Pi family</td><td>Jetson Orin Nano (VLA and SLAM on one board)</td></tr>
+        <tr><td class="id">Sensors</td><td>Attitude, joints</td><td>+ 3D LiDAR, RGB-D</td></tr>
+        <tr><td class="id">Control</td><td>Gait, posture, RL walking</td><td>+ rough terrain, fall recovery, autonomy</td></tr>
+      </table>
+    </section>
+  </div>
+</div>
+
+<div class="grid bottom">
+  <div>
+    <section>
+      <h2><span class="n">5</span>System architecture</h2>
+      <figure class="arch">
+        <svg viewBox="0 0 640 710" role="img" aria-label="System diagram: high-level processing on the Jetson Orin Nano, joint control on a microcontroller, actuators and sensors, and separated power rails">
+          <defs>
+            <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1d2430"/></marker>
+          </defs>
+          <g font-family="Noto Sans, Noto Sans CJK JP" text-anchor="middle">
+            <!-- Jetson -->
+            <rect x="10" y="10" width="440" height="256" rx="14" fill="#e4f2fa" stroke="#0e7fc0" stroke-width="3"/>
+            <text x="230" y="46" font-size="24" font-weight="700" fill="#0b3f73">Jetson Orin Nano (ROS 2)</text>
+            <rect x="34" y="66" width="392" height="48" rx="8" fill="#fff" stroke="#9fb6cc"/>
+            <text x="230" y="98" font-size="20">Agentic AI / VLA (language tasks)</text>
+            <rect x="34" y="126" width="392" height="48" rx="8" fill="#fff" stroke="#9fb6cc"/>
+            <text x="230" y="158" font-size="20">SLAM / Nav2 (path planning)</text>
+            <rect x="34" y="186" width="392" height="48" rx="8" fill="#fff" stroke="#9fb6cc"/>
+            <text x="230" y="218" font-size="20">Gait generation / RL policy</text>
+            <!-- MCU -->
+            <rect x="10" y="336" width="440" height="100" rx="14" fill="#fdeedf" stroke="#c4601a" stroke-width="3"/>
+            <text x="230" y="378" font-size="24" font-weight="700" fill="#c4601a">STM32 / ESP32</text>
+            <text x="230" y="412" font-size="18">Fast joint control / safe stop</text>
+            <line x1="160" y1="266" x2="160" y2="332" stroke="#1d2430" stroke-width="2.5" marker-end="url(#a)"/>
+            <text x="150" y="306" font-size="17" text-anchor="end">Joint targets</text>
+            <line x1="300" y1="336" x2="300" y2="270" stroke="#1d2430" stroke-width="2.5" marker-end="url(#a)"/>
+            <text x="310" y="306" font-size="17" text-anchor="start">Joint states</text>
+            <!-- Actuators -->
+            <rect x="10" y="506" width="210" height="100" rx="14" fill="#fff" stroke="#5a6474" stroke-width="2"/>
+            <text x="115" y="548" font-size="22" font-weight="700">Actuators</text>
+            <text x="115" y="580" font-size="18">× 12 (with encoders)</text>
+            <line x1="115" y1="436" x2="115" y2="502" stroke="#1d2430" stroke-width="2.5" marker-end="url(#a)"/>
+            <!-- Sensors -->
+            <rect x="240" y="506" width="210" height="100" rx="14" fill="#fff" stroke="#5a6474" stroke-width="2"/>
+            <text x="345" y="548" font-size="22" font-weight="700">Sensors</text>
+            <text x="345" y="580" font-size="18">LiDAR / RGB-D / IMU</text>
+            <path d="M450,556 L480,556 L480,160 L454,160" fill="none" stroke="#1d2430" stroke-width="2.5" marker-end="url(#a)"/>
+            <!-- Power -->
+            <rect x="500" y="10" width="130" height="596" rx="14" fill="#f2f3f5" stroke="#5a6474" stroke-width="2"/>
+            <text x="565" y="50" font-size="22" font-weight="700">Power</text>
+            <text x="565" y="84" font-size="17">Battery</text>
+            <text x="565" y="108" font-size="17">BMS / fuses</text>
+            <text x="565" y="256" font-size="17" fill="#0e7fc0" font-weight="700">Compute rail</text>
+            <text x="565" y="280" font-size="16" fill="#5a6474">up to ~25 W</text>
+            <text x="565" y="516" font-size="17" fill="#c4601a" font-weight="700">Motor rail</text>
+            <text x="565" y="540" font-size="16" fill="#5a6474">kept separate</text>
+            <line x1="500" y1="236" x2="454" y2="200" stroke="#0e7fc0" stroke-width="3" stroke-dasharray="8 5"/>
+            <path d="M565,606 L565,626 L115,626 L115,610" fill="none" stroke="#c4601a" stroke-width="3" stroke-dasharray="8 5"/>
+            <!-- E-stop -->
+            <rect x="10" y="646" width="620" height="60" rx="30" fill="#fff" stroke="#c4601a" stroke-width="2.5"/>
+            <text x="320" y="685" font-size="20" font-weight="700" fill="#c4601a">E-stop circuit / watchdog / fall detection</text>
+          </g>
+        </svg>
+      </figure>
+      <figcaption>Fast control on the MCU, heavy inference on the Jetson. Separate motor and compute rails keep voltage drops and noise from resetting the computer.</figcaption>
+    </section>
+
+    <section>
+      <h2><span class="n">6</span>Designing one 3-DoF leg</h2>
+      <p>Hip ab/adduction, hip flexion/extension and knee. One leg comes first, to check calculations against measurements.</p>
+      <div class="eq"><i>p</i> = <i>f</i>(<i>q</i>),&ensp; <i>ṗ</i> = <i>J</i>(<i>q</i>) <i>q̇</i><br><i>M</i>(<i>q</i>)<i>q̈</i> + <i>C</i>(<i>q</i>,<i>q̇</i>)<i>q̇</i> + <i>g</i>(<i>q</i>) = <i>τ</i> + <i>J</i><sub><i>c</i></sub><sup>T</sup><i>f</i><sub><i>c</i></sub></div>
+      <p class="small">Kinematics in MATLAB, torque <i>τ</i> in Simscape Multibody, used to pick actuators.</p>
+    </section>
+  </div>
+
+  <div>
+    <section>
+      <h2><span class="n">7</span>Sizing the body for the terrain</h2>
+      <p>Flat ground, grass, gravel, steps and slopes each favour different leg lengths and body sizes. Before detailed CAD, I <b>choose the dimensions in simulation</b>.</p>
+      <p class="small">Inspired by RoboGrammar (SIGGRAPH Asia 2020). I do not search over topologies: the 12-DoF quadruped layout is fixed and only dimensions are optimised.</p>
+      <table>
+        <tr><th>Parameter</th><th>Affects</th></tr>
+        <tr><td class="id">Thigh / shank length</td><td>Stride, steps, torque</td></tr>
+        <tr><td class="id">Hip placement</td><td>Leg spacing</td></tr>
+        <tr><td class="id">Body / CoM</td><td>Stability on slopes</td></tr>
+        <tr><td class="id">Foot shape</td><td>Contact area, slip</td></tr>
+        <tr><td class="id">Joint range</td><td>Posture and fall recovery</td></tr>
+      </table>
+      <h3>Evaluation loop</h3>
+      <ol>
+        <li>Generate URDF / MJCF models from the parameters</li>
+        <li>Build flat, bumpy, gap, slope and low-friction terrain in MuJoCo</li>
+        <li>Optimise a gait controller (MPC or RL) per candidate</li>
+        <li>Compare speed, energy, fall rate and joint torque</li>
+        <li>Pick within actuator and 3D-printing limits</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2><span class="n">8</span>Outdoor tests</h2>
+      <ul>
+        <li>Walking speed on flat ground, grass and gravel</li>
+        <li>Climbing small steps, posture on slopes</li>
+        <li>Battery life, <b>joint temperature</b>, number of falls</li>
+      </ul>
+      <p class="small">The first robot targets dry, flat ground with small bumps. Mud, rain and steep slopes come later.</p>
+    </section>
+  </div>
+
+  <div>
+    <section>
+      <h2><span class="n">9</span>Roadmap</h2>
+      <ul class="tl">
+        <li class="now"><span class="when">Phase 1: one leg</span>Sizing study, Fusion design, IK and torque estimates, joint control from Python<span class="out">→ an original 3-DoF leg</span></li>
+        <li><span class="when">Phase 2: the quadruped</span>Body, four legs, battery layout, IMU, ROS 2<span class="out">→ a 12-DoF quadruped</span></li>
+        <li><span class="when">Phase 3: RL walking</span>URDF and MuJoCo models, PPO, Sim2Real<span class="out">→ a robot that walks with RL</span></li>
+        <li><span class="when">Phase 4: outdoor mobility</span>Better feet and shell; grass, gravel, steps, slopes<span class="out">→ an outdoor-ready quadruped</span></li>
+        <li><span class="when">Phase 5: autonomy</span>RGB-D, LiDAR, SLAM, Nav2, outdoor patrol</li>
+        <li><span class="when">Phase 6: VLA and Agentic AI</span>Language-driven exploration, failure detection and recovery</li>
+      </ul>
+      <p class="small" style="margin-top:3mm">Now in early design. <b>Three actuators for one leg first</b>; twelve once they prove out.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">10</span>Cautions</h2>
+      <div class="min">
+        <ul>
+          <li><b>Safety first.</b> Joint and torque limits, an e-stop, first tests on a stand</li>
+          <li><b>Cost.</b> Roughly ¥200k–600k, mostly the twelve joint actuators; validate one leg before scaling</li>
+          <li><b>Licences.</b> Check each Pupper v3 repo, CAD file and firmware before reuse</li>
+        </ul>
+      </div>
+      <p class="small" style="margin-top:3mm">A hardware-learning side project, separate from my main research on vision-tactile failure prediction. Phase 6 may try the same failure-recovery ideas on legs.</p>
+    </section>
+
+    <div class="refs">
+      <ol>
+        <li>Stanford Pupper v3 Documentation, pupper-v3-documentation.readthedocs.io</li>
+        <li>A. Zhao et al., RoboGrammar, ACM TOG 39(6), SIGGRAPH Asia 2020.</li>
+        <li>J. Xu et al., Multi-Objective Graph Heuristic Search for Terrestrial Robot Design, ICRA 2021.</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
